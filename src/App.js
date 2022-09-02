@@ -1,8 +1,13 @@
 import './App.css';
 import { FormControl, TextField, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import getCatBreed from './getCatBreed';
+import CatBreedDropdown from './CatBreedDropdown.js'
 
 
 function App() {
+  let catBreedList = getCatBreed()
+  console.log(catBreedList);
+
   return (
     <div className="App">
       <h1>Get your quote!</h1>
@@ -21,7 +26,7 @@ function App() {
         <p>Your pet's age</p>
         <TextField id="outlined-basic" label="Outlined" variant="outlined" required />
         <p>Breed</p>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" required />
+        <CatBreedDropdown />
         <p>Address</p>
         <TextField id="outlined-basic" label="Outlined" variant="outlined" required />
       </FormControl>
